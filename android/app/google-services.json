@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "564746212449",
+    "project_id": "e-oturum-30-ocak",
+    "storage_bucket": "e-oturum-30-ocak.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564746212449:android:bace8df4745561e6f88620",
+        "android_client_info": {
+          "package_name": "com.example.e_oturum_30_ocak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564746212449-ot3er2rcfsbt6bhmovd1n59dtf4h00u6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4H2qWCQQQWWTWlI0AzeSaMvjVHnVhzT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564746212449-ot3er2rcfsbt6bhmovd1n59dtf4h00u6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
