@@ -10,10 +10,8 @@ class SocialLoginButton extends StatelessWidget {
   final Widget butonIcon;
   final VoidCallback onPressed;
   final double punta;
-  final double paddingl;
-  final double paddingr;
-  final double paddingt;
-  final double paddingb;
+  final double butongenislik;
+   final double butonyukseklik;
   final double ilkgenislik;
   final double ikincigenislik;
   final double ucuncugenislik;
@@ -33,13 +31,11 @@ class SocialLoginButton extends StatelessWidget {
     this.onPressed,
     this.punta: 15,
     this.butonIcon,
-    this.paddingl: 0,
-    this.paddingr: 0,
-    this.paddingt: 0,
-    this.paddingb: 0,
     this.genislik: 0,
     this.ilkgenislik: 0,
-    this.ikincigenislik: 0, this.ucuncugenislik,
+    this.ikincigenislik: 0,
+    this.ucuncugenislik,
+    this.butongenislik, this.butonyukseklik,
   })  : assert(butonText != null),
         super(key: key);
 
@@ -48,6 +44,8 @@ class SocialLoginButton extends StatelessWidget {
     return Container(
       //margin: EdgeInsets.only(bottom: 15),
       child: SizedBox(
+        width: butongenislik,
+        height: butonyukseklik,
         /* burada sized box ile sarmamızın nedeni risedbuttonun 
       butonun kendinden getirdiği çevresine bıraktırdığı otomatik
       boşluk özelliğini kaldırmaktır.  */
@@ -60,43 +58,35 @@ class SocialLoginButton extends StatelessWidget {
             primary: butonColor,
           ),
           //style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.red) ),
-          child: Padding(
-            padding: EdgeInsets.only(
-              left: paddingl,
-              right: paddingr,
-              top: paddingt,
-              bottom: paddingb,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: ilkgenislik,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: ilkgenislik,
+              ),
+              butonIcon != null ? butonIcon : Container(),
+              SizedBox(
+                width: ikincigenislik,
+              ),
+              /* eğer Spread cllection if kavramını uygulamak istiyorsan
+              224. videoyu izle  */
+              /*burada ıconu kapamın nedeni devasa boyutlara ulaşmasıdır. 
+              içerisine ekstra bir container tanımlamıyorum fakar ıcon boyutunu ayarlayamazsam 
+              container koyacağım */
+              Text(
+                butonText,
+                style: TextStyle(
+                  fontFamily: 'ProximaNova',
+                  color: textColor,
+                  fontSize: punta,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
                 ),
-                butonIcon != null ? butonIcon : Container(),
-                SizedBox(
-                  width: ikincigenislik,
-                ),
-                /* eğer Spread cllection if kavramını uygulamak istiyorsan
-                224. videoyu izle  */
-                /*burada ıconu kapamın nedeni devasa boyutlara ulaşmasıdır. 
-                içerisine ekstra bir container tanımlamıyorum fakar ıcon boyutunu ayarlayamazsam 
-                container koyacağım */
-                Text(
-                  butonText,
-                  style: TextStyle(
-                    fontFamily: 'ProximaNova',
-                    color: textColor,
-                    fontSize: punta,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
-                ),
-                SizedBox(
-                  width: ikincigenislik,
-                ),
-              ],
-            ),
+              ),
+              SizedBox(
+                width: ikincigenislik,
+              ),
+            ],
           ),
         ),
       ),
