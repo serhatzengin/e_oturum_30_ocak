@@ -15,40 +15,46 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Drawer'),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(child: Text('Canım Drawerim')),
-            SocialLoginButton(
-              butonText: "Çıkış Yap",
-              butonColor: Color(0xffffffff),
-              textColor: Color(0xff868686),
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-                Navigator.pushNamedAndRemoveUntil(
-                    context, LoginScreen.idScreen, (route) => false);
-              },
-              //butonIcon: Image.asset("images/facebook.png", width: 10),
-              butongenislik: 350,
-              butonyukseklik: 44,
-            ),
-            SizedBox(height: 10),
-            GestureDetector(
-              onTap: () {
-                FirebaseAuth.instance.signOut();
-                Navigator.pushNamedAndRemoveUntil(
-                    context, LoginScreen.idScreen, (route) => false);
-              },
-              child: ListTile(
-                title: Text('Deneme'),
-              ),
-            ),
-          ],
+        appBar: AppBar(
+          title: Text('Drawer'),
         ),
-      ),
-    );
+        drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              DrawerHeader(child: Text('Canım Drawerim')),
+              SocialLoginButton(
+                butonText: "Çıkış Yap",
+                butonColor: Color(0xffffffff),
+                textColor: Color(0xff868686),
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, LoginScreen.idScreen, (route) => false);
+                },
+                //butonIcon: Image.asset("images/facebook.png", width: 10),
+                butongenislik: 350,
+                butonyukseklik: 44,
+              ),
+              SizedBox(height: 10),
+              GestureDetector(
+                onTap: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, LoginScreen.idScreen, (route) => false);
+                },
+                child: ListTile(
+                  title: Text('Deneme'),
+                ),
+              ),
+            ],
+          ),
+        ),
+        body: Column(
+          children: [
+            InkWell(
+                child: Container(
+                    height: 50, width: double.maxFinite, color: Colors.black)),
+          ],
+        ));
   }
 }
