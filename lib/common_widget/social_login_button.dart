@@ -11,7 +11,7 @@ class SocialLoginButton extends StatelessWidget {
   final VoidCallback onPressed;
   final double punta;
   final double butongenislik;
-   final double butonyukseklik;
+  final double butonyukseklik;
   final double ilkgenislik;
   final double ikincigenislik;
   final double ucuncugenislik;
@@ -35,7 +35,8 @@ class SocialLoginButton extends StatelessWidget {
     this.ilkgenislik: 0,
     this.ikincigenislik: 0,
     this.ucuncugenislik,
-    this.butongenislik, this.butonyukseklik,
+    this.butongenislik,
+    this.butonyukseklik,
   })  : assert(butonText != null),
         super(key: key);
 
@@ -93,5 +94,3 @@ class SocialLoginButton extends StatelessWidget {
     );
   }
 }
-/*   yapılacaklar  buton kütüprhanemi değiştireceğim sized box yapacağım. paddin padding olmaycak sadece 
-sized box yapacağım. */
