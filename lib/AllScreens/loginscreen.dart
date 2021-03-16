@@ -1,5 +1,5 @@
 import 'package:e_oturum_30_ocak/AllScreens/registerationScreen.dart';
-
+import 'package:e_oturum_30_ocak/AllWidgets/progressDailog.dart';
 import 'package:e_oturum_30_ocak/common_widget/dialog.dart';
 import 'package:e_oturum_30_ocak/common_widget/social_login_button.dart';
 import 'package:e_oturum_30_ocak/main.dart';
@@ -132,7 +132,9 @@ class LoginScreen extends StatelessWidget {
                   butonText: "Giriş Yap",
                   butonColor: Color(0xff3b5999),
                   textColor: Color(0xffffffff),
-                  onPressed: () {},
+                  onPressed: () {
+                   
+                  },
                   butonIcon: Image.asset("images/facebook.png", width: 10),
                   ilkgenislik: 10,
                   ikincigenislik: 10,
@@ -191,15 +193,15 @@ class LoginScreen extends StatelessWidget {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   void loginAndAuthenticateUser(BuildContext context) async {
-    // showDialog(
-    //   context: context,
-    //   barrierDismissible: false,
-    //   builder: (BuildContext context) {
-    //     return ProgressDialog(
-    //       message: "Giriş yapılıyor ",
-    //     );
-    //   },
-    // );
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return ProgressDialog(
+          message: "Giriş yapılıyor ",
+        );
+      },
+    );
 
     final User firebaseUser = (await _firebaseAuth
             .signInWithEmailAndPassword(

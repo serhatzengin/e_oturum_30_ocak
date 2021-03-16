@@ -1,6 +1,6 @@
 import 'package:e_oturum_30_ocak/AllScreens/loginscreen.dart';
-
 import 'package:e_oturum_30_ocak/AllScreens/mainscreen.dart';
+import 'package:e_oturum_30_ocak/AllScreens/splash/splash_screen.dart';
 import 'package:e_oturum_30_ocak/common_widget/dialog.dart';
 import 'package:e_oturum_30_ocak/common_widget/social_login_button.dart';
 import 'package:e_oturum_30_ocak/main.dart';
@@ -151,8 +151,9 @@ class RegisterationScreen extends StatelessWidget {
               butonColor: Color(0xffffffff),
               textColor: Color(0xff868686),
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, LoginScreen.idScreen, (route) => false);
+                 Navigator.pushNamedAndRemoveUntil(
+                     context, LoginScreen.idScreen, (route) => false);
+              
               },
               //butonIcon: Image.asset("images/facebook.png", width: 10),
               butongenislik: 350,
@@ -182,9 +183,9 @@ class RegisterationScreen extends StatelessWidget {
       password: passwordTextEditingController.text,
     )
             .catchError((errMsg) {
-      
-     // displayToastMessage("Hata" + errMsg.toString(), context);
-     showDialog(context: context, builder: (BuildContext context) => CustomDialog()); 
+      // displayToastMessage("Hata" + errMsg.toString(), context);
+      showDialog(
+          context: context, builder: (BuildContext context) => CustomDialog());
     }))
         .user;
 
@@ -200,11 +201,12 @@ class RegisterationScreen extends StatelessWidget {
       usersRef.child(firebaseUser.uid).set(userDataMap);
       displayToastMessage(
           "Tebrikler Hesabınız  başarılı şekilde oluşturuldu", context);
-      Navigator.pushNamedAndRemoveUntil(
-          context, MainScreen.idScreen, (route) => false);
+  
+             Navigator.pushNamedAndRemoveUntil(
+                    context, SplashScreeen.routeName, (route) => false);
     } else {
       _firebaseAuth.signOut();
-    //  Navigator.pop(context);
+      //  Navigator.pop(context);
 //error occured - display error msg
       displayToastMessage("Kullanıcı bulunamadı,üyelik oluşturun ", context);
     }

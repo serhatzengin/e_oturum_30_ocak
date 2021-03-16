@@ -1,11 +1,11 @@
 import 'package:e_oturum_30_ocak/AllScreens/mainscreen.dart';
+import 'package:e_oturum_30_ocak/routs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'AllScreens/loginscreen.dart';
 import 'AllScreens/registerationScreen.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,15 +25,32 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-     // initialRoute: LoginScreen.idScreen,
-      initialRoute: FirebaseAuth.instance.currentUser==null? LoginScreen.idScreen:MainScreen.idScreen,
+      // initialRoute: LoginScreen.idScreen,
+      initialRoute: FirebaseAuth.instance.currentUser == null
+          ? LoginScreen.idScreen
+          : MainScreen.idScreen,
       /* uygulama bu ekrandan başlayacak  */
-      routes: {
-        RegisterationScreen.idScreen: (context) => RegisterationScreen(),
-        LoginScreen.idScreen: (context) => LoginScreen(),
-        MainScreen.idScreen: (context) => MainScreen(),
-      },
+      routes: routes,
+
+      //{
+      // RegisterationScreen.idScreen: (context) => RegisterationScreen(),
+      // LoginScreen.idScreen: (context) => LoginScreen(),
+      // MainScreen.idScreen: (context) => MainScreen(),
+      //  },
       debugShowCheckedModeBanner: false,
     );
   }
 }
+
+
+/* 
+eski kurallar 
+bu kuralları database rules kısmına yapıştır. 
+
+
+"rules": {
+    ".read": "now < 1615842000000",  // 2021-3-16
+    ".write": "now < 1615842000000",  // 2021-3-16
+  }
+
+ */
