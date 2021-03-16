@@ -1,5 +1,5 @@
 import 'package:e_oturum_30_ocak/AllScreens/registerationScreen.dart';
-import 'package:e_oturum_30_ocak/AllWidgets/progressDailog.dart';
+
 import 'package:e_oturum_30_ocak/common_widget/dialog.dart';
 import 'package:e_oturum_30_ocak/common_widget/social_login_button.dart';
 import 'package:e_oturum_30_ocak/main.dart';
