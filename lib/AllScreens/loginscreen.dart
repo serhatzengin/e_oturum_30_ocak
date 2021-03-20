@@ -1,6 +1,8 @@
 import 'package:e_oturum_30_ocak/AllScreens/registerationScreen.dart';
 import 'package:e_oturum_30_ocak/AllWidgets/progressDailog.dart';
 import 'package:e_oturum_30_ocak/common_widget/dialog.dart';
+import 'package:e_oturum_30_ocak/common_widget/rounded_button.dart';
+import 'package:e_oturum_30_ocak/common_widget/rounded_button_small.dart';
 import 'package:e_oturum_30_ocak/common_widget/social_login_button.dart';
 import 'package:e_oturum_30_ocak/main.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -132,9 +134,7 @@ class LoginScreen extends StatelessWidget {
                   butonText: "Giriş Yap",
                   butonColor: Color(0xff3b5999),
                   textColor: Color(0xffffffff),
-                  onPressed: () {
-                   
-                  },
+                  onPressed: () {},
                   butonIcon: Image.asset("images/facebook.png", width: 10),
                   ilkgenislik: 10,
                   ikincigenislik: 10,
@@ -225,8 +225,9 @@ class LoginScreen extends StatelessWidget {
           } else {
             _firebaseAuth.signOut();
             showDialog(
-          context: context, builder: (BuildContext context) => CustomDialog());
-          /* kendi kütüphanemi içeren mesajı göstermek için bu ko */
+                context: context,
+                builder: (BuildContext context) => CustomDialog());
+            /* kendi kütüphanemi içeren mesajı göstermek için bu ko */
             // displayToastMessage(
             //     "Kullanıcı için kayıt bulunamadı üyelik oluşturun!", context);
 
